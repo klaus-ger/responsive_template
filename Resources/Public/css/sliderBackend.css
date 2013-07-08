@@ -102,6 +102,7 @@ h3 {
 label {
     display: inline-block;
     width: 100px;
+    vertical-align: top;
     
 }
 .labelpadding {
@@ -159,7 +160,7 @@ label {
 }
 .buttonAbbrechen {
     float: right;
-    margin-right: 20px;
+    margin-right: 110px;
 }
 
 .imgDelete {

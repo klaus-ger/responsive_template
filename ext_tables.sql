@@ -49,9 +49,11 @@ CREATE TABLE tx_responsivetemplate_domain_model_sliderimages (
 	pid int(11) DEFAULT '0' NOT NULL,
 
 	slider_id int(11) DEFAULT '0' NOT NULL,
+        slider_headline varchar(255) DEFAULT '' NOT NULL,
 	slider_text text NOT NULL,
 	slider_prev_image text NOT NULL,
 	slider_image text NOT NULL,
+        slider_link varchar(255) DEFAULT '' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

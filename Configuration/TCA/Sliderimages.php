@@ -116,6 +116,18 @@ $TCA['tx_responsivetemplate_domain_model_sliderimages'] = array(
 				'eval' => 'trim'
 			),
 		),
+            
+            		'slider_headline' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:responsive_template/Resources/Private/Language/locallang_db.xlf:tx_t3devslider_domain_model_slider.slider_headline',
+			'config' => array(
+				'type' => 'text',
+				'cols' => 40,
+				'rows' => 15,
+				'eval' => 'trim'
+			),
+		),
+            
 		'slider_prev_image' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:responsive_template/Resources/Private/Language/locallang_db.xlf:tx_t3devslider_domain_model_slider.slider_prev_image',
@@ -132,6 +144,19 @@ $TCA['tx_responsivetemplate_domain_model_sliderimages'] = array(
 		'slider_image' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:responsive_template/Resources/Private/Language/locallang_db.xlf:tx_t3devslider_domain_model_slider.slider_image',
+			'config' => array(
+				'type' => 'group',
+				'internal_type' => 'file',
+				'uploadfolder' => 'uploads/responsivetemplate/slider',
+				'show_thumbs' => 1,
+				'size' => 5,
+				'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
+				'disallowed' => '',
+			),
+		),
+            		'slider_link' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:responsive_template/Resources/Private/Language/locallang_db.xlf:tx_t3devslider_domain_model_slider.slider_link',
 			'config' => array(
 				'type' => 'group',
 				'internal_type' => 'file',

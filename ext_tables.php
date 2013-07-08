@@ -30,7 +30,7 @@ if (TYPO3_MODE === 'BE') {
             'SliderBE' => 'index, 
                            sliderEdit, sliderUpdate, sliderNew, sliderCreate, sliderDelete,
                            indexImages,
-                           imageNew, imageCreate, imageDelete',
+                           imageNew, imageCreate, imageDelete, imageEdit, imageUpdate',
             
         ), 
         array(

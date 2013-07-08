@@ -3,16 +3,29 @@
         <div class="imgwidth">{slider.sliderImgwidth}</div>
         <div class="imgheight">{slider.sliderImgheight}</div>
     </div>
-<div id="slideshowWrapper">
-    <div class="t3devslider">
-<f:for each="{sliderimages}" as="slide" iteration="iteration">
-            <f:image src="uploads/responsivetemplate/slider/{slide.sliderImage}"  alt="My Image" 
-         style="position:{f:if(condition:'{iteration.isFirst}', then:'absolute', else:' absolute')};"/>
-        
- 
-</f:for>
-    </div>
+    <div id="slideshowWrapper">
 
-<div class="tx-t3dev-sliderclear">&nbsp;</div>
+
+        <div class="tx-responsive-slider">&nbsp;</div>
+    </div>
 </div>
-</div>
+<div class="container">
+    <div id="featured"> 
+        <f:for each="{sliderimages}" as="slide" >
+            <div class="sliderdimension" >
+                <a href="{f:uri.page(pageUid:slide.sliderLink)}">
+                    <f:image src="uploads/responsivetemplate/slider/{slide.sliderImage}"  alt="{slide.sliderHeadline}"  />
+                    <f:if condition="{slide.sliderHeadline}">
+                    <div class="orbit-caption">
+                        <div class="slider-headline">{slide.sliderHeadline}</div>
+                        <div class="slider-text"><f:format.nl2br>{slide.sliderText}</f:format.nl2br></div>
+                    </div>
+                    </f:if>
+                </a>
+            </div>
+
+  
+</f:for>
+</div></div>
+
+

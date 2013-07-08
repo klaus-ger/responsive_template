@@ -1,7 +1,12 @@
 <div class="header">
     <h1 id="header"><f:cObject typoscriptObjectPath="lib.header" /></h1>
-    </div>
+</div>
 
+<f:if condition="{languagemenu}">
+<div id="languageselect">
+    <f:cObject typoscriptObjectPath="lib.language_switch" />
+</div>
+</f:if>
 <div id="logo">
         <f:cObject typoscriptObjectPath="lib.logo" />           
 </div>

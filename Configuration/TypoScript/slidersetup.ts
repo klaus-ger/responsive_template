@@ -34,6 +34,7 @@ page.includeCSS {
     tx_responsivetemplate_slider_1 = EXT:responsive_template/Resources/Public/css/sliderFrontend.css
 }
 page.includeJSFooter {
+    tx_responsive_template_orbit = EXT:responsive_template/Resources/Public/javascript/jquery.orbit-1.2.3.js
     tx_responsive_template_slider = EXT:responsive_template/Resources/Public/javascript/slider.js
 
 }

@@ -56,6 +56,16 @@ img, #logo {
     overflow: hidden;
 }
 
+#languageselect {
+    float: right;
+}
+#languageselect ul li{
+    float: right;
+    padding: 0 10px;
+}
+#languageselect ul li a {
+    text-decoration: none;
+}
 #logo {
     border: none;
     margin: 60px auto 34px 280px;

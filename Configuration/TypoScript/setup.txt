@@ -1,8 +1,9 @@
 
 
-
 <INCLUDE_TYPOSCRIPT: source="FILE: EXT:responsive_template/Configuration/TypoScript/menuLib.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE: EXT:responsive_template/Configuration/TypoScript/slidersetup.ts">
+
+
 
 lib.slider         < styles.content.get
 lib.content        < styles.content.getLeft
@@ -101,6 +102,13 @@ page {
 
         partialRootPath     = EXT:responsive_template/Resources/Private/html/Partial/
         layoutRootPath      = EXT:responsive_template/Resources/Private/html/Layout/
+
+        variables {
+            languagemenu = TEXT
+            languagemenu.insertData = 1
+            languagemenu.value = {$plugin.tx_responsivetemplate.settings.useLanguage}
+
+            }
     }
       
     meta {
@@ -147,6 +155,8 @@ config {
     metaCharset                         = utf-8
     pageNotFound_handling               = 1
     xhtml_cleaning                      = all
+    xmlprologue                         = none
+    htmlTag_setParams                   = xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$plugin.tx_responsivetemplate.settings.languagekey}" lang="{$plugin.tx_responsivetemplate.settings.languagekey}"
 
     removeDefaultJS                     = external
     inlineStyle2TempFile                = 1
@@ -163,6 +173,13 @@ config {
     #simulateStaticDocuments            = 0
     disablePrefixComment                = 1
 
+   
+}
+[globalVar = GP:L = 1]
+config {
+    sys_language_uid = 1
+    language         = {$plugin.tx_responsivetemplate.settings.secondlanguagekey}
+    htmlTag_setParams = xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$plugin.tx_responsivetemplate.settings.secondlanguagekey}" lang="{$plugin.tx_responsivetemplate.settings.secondlanguagekey}"
 
 }
-
+[global]

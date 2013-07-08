@@ -1,14 +1,8 @@
 ####################################################
 #
-# t3-developer.com
-# Tutorial: responsive Webdesign mit TYPO3
-# Datei: ts_menu.txt
-# Pfad: fileadmin/template/typoscript/ts_menu.txt
+# menu and language libs for EXT: responsive_template
 #
 ####################################################
-
-
-
 
 # MAIN Navigation
 lib.mainMenu = HMENU
@@ -34,4 +28,35 @@ lib.mainMenu {
     4 < .1
     4.NO.wrapItemAndSub = <li>|</li>
 
+}
+
+# Language Select
+lib.language_switch = HMENU
+lib.language_switch {
+	special = language
+	special.value = 1,0
+	special.normalWhenNoLanguage = 0
+	wrap = <ul id="language_switch">|</ul>
+	1 = TMENU
+	1 {
+		noBlur = 1
+		# Standard Sprachen
+		NO = 1
+		NO {
+			linkWrap = <li>|</li>
+                        stdWrap.override = {$plugin.tx_responsivetemplate.settings.firstLanguageName} || {$plugin.tx_responsivetemplate.settings.secondLanguageName}
+                        doNotLinkIt = 1
+                        stdWrap.typolink.parameter.data = page:uid
+			stdWrap.typolink.additionalParams = &L=0 || &L=1
+			stdWrap.typolink.addQueryString = 1
+			stdWrap.typolink.addQueryString.exclude = L,id,cHash,no_cache
+			stdWrap.typolink.addQueryString.method = GET
+			stdWrap.typolink.useCacheHash = 1
+			stdWrap.typolink.no_cache = 0
+		}
+		ACT < .NO
+		ACT.linkWrap = <li class="active">|</li>
+		USERDEF1 < .NO
+		USERDEF2 < .ACT
+	}
 }

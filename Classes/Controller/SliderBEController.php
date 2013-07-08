@@ -163,11 +163,21 @@ class Tx_ResponsiveTemplate_Controller_SliderBEController extends Tx_Extbase_MVC
     /**
      * Image Create Action
      *
-     * @param Tx_ResponsiveTemplate_Domain_Model_Sliderimages $image 
+     * We don't use the property manager here because on compatibility with 4.7! 
      * @return void
      */
-    public function imageCreateAction($image) {
-
+    public function imageCreateAction() {
+        if ($this->request->hasArgument('image')) {
+            $image = $this->request->getArgument('image');
+        }
+        
+        $newImage = new Tx_ResponsiveTemplate_Domain_Model_Sliderimages;
+        $newImage->setSliderId($image['sliderId']);
+        
+        $newImage->setSliderHeadline($image['sliderHeadline']);
+        //$newImage->setSliderText($image['sliderText']);
+        //
+        
         //Tx_Extbase_Utility_Debugger::var_dump($_FILES['tx_responsivetemplate_web_responsivetemplateresponsiveslider']);
         // Bilddateihandling
 
@@ -180,14 +190,77 @@ class Tx_ResponsiveTemplate_Controller_SliderBEController extends Tx_Extbase_MVC
             t3lib_div::upload_copy_move(
                     $_FILES['tx_responsivetemplate_web_responsivetemplateresponsiveslider']['tmp_name']['image']['sliderImage'], $fileName);
 
-            $image->setSliderImage(basename($fileName));
+            $newImage->setSliderImage(basename($fileName));
         }
        
-        $this->sliderimagesRepository->add($image);
+        
+        
+        $this->sliderimagesRepository->add($newImage);
         
         $this->redirect('indexImages');
     }
     
+        /**
+     * Edit Image Action
+     *
+     * @param Tx_ResponsiveTemplate_Domain_Model_Sliderimages $image
+     * @return void
+     */
+    public function imageEditAction($image) {
+        
+        $slider = $this->sliderRepository->findAll();
+        
+        $image->setSliderImageTemp($image->getSliderImage());
+        
+        $this->view->assign('menu', 'image');
+        $this->view->assign('image', $image);
+        $this->view->assign('slider', $slider);
+    }
+    
+            /**
+     * Edit Update Action
+     *
+     * We don't use the property manager because of compatibility mode with 4.7!
+     * @return void
+     */
+    public function imageUpdateAction() {
+        if ($this->request->hasArgument('image')) {
+            $image = $this->request->getArgument('image');
+        }
+        
+        $imageDB = $this->sliderimagesRepository->findByUid($image['uid']);
+        
+        $imageDB->setSliderId($image['sliderId']);
+        $imageDB->setSliderHeadline($image['sliderHeadline']);
+        $imageDB->setSliderText($image['sliderText']);
+        $imageDB->setSliderLink($image['sliderLink']);
+        $imageDB->setSliderImage($image['sliderImageTemp']);
+        
+        //Tx_Extbase_Utility_Debugger::var_dump($_FILES['tx_responsivetemplate_web_responsivetemplateresponsiveslider']);
+        // Bilddateihandling
+
+        if ($_FILES['tx_responsivetemplate_web_responsivetemplateresponsiveslider']['name']['image']['sliderImage']) {
+            $basicFileFunctions = t3lib_div::makeInstance('t3lib_basicFileFunctions');
+
+            $fileName = $basicFileFunctions->getUniqueName(
+                    $_FILES['tx_responsivetemplate_web_responsivetemplateresponsiveslider']['name']['image']['sliderImage'], t3lib_div::getFileAbsFileName('uploads/responsivetemplate/slider/'));
+
+            t3lib_div::upload_copy_move(
+                    $_FILES['tx_responsivetemplate_web_responsivetemplateresponsiveslider']['tmp_name']['image']['sliderImage'], $fileName);
+
+            $imageDB->setSliderImage(basename($fileName));
+        }
+       
+        
+        //Tx_Extbase_Utility_Debugger::var_dump($imageDB);
+        $this->sliderimagesRepository->update($imageDB);
+        
+        $this->redirect('indexImages');
+        
+        
+        
+
+    }
     /**
      * Delete Image Action
      *

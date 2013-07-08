@@ -1,6 +1,6 @@
 <?php
 
-/***************************************************************
+/* * *************************************************************
  *  Copyright notice
  *
  *  (c) 2013 
@@ -21,146 +21,199 @@
  *  GNU General Public License for more details.
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
- ***************************************************************/
+ * ************************************************************* */
 
 /**
  *
  *
- * @package t3dev_slider
+ * @package responsive_temlate slider
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
 class Tx_ResponsiveTemplate_Domain_Model_Sliderimages extends Tx_Extbase_DomainObject_AbstractEntity {
 
-	/**
-	 * The Slider ID
-	 *
-	 * @var Tx_ResponsiveTemplate_Domain_Model_Slider
-	 */
-	protected $sliderId;
+    /**
+     * The Slider ID
+     *
+     * @var Tx_ResponsiveTemplate_Domain_Model_Slider
+     */
+    protected $sliderId;
 
-	/**
-	 * The Headline for the Slider
-	 *
-	 * @var string
-	 */
-	protected $sliderHeadline;
+    /**
+     * The Headline for the Slider
+     *
+     * @var string
+     */
+    protected $sliderHeadline;
 
-	/**
-	 * The Text for the Sliderimage
-	 *
-	 * @var string
-	 */
-	protected $sliderText;
+    /**
+     * The Text for the Sliderimage
+     *
+     * @var string
+     */
+    protected $sliderText;
 
-	/**
-	 * The prev Image
-	 *
-	 * @var string
-	 */
-	protected $sliderPrevImage;
+    /**
+     * The prev Image
+     *
+     * @var string
+     */
+    protected $sliderPrevImage;
 
-	/**
-	 * The SliderImage
-	 *
-	 * @var string
-	 */
-	protected $sliderImage;
+    /**
+     * The SliderImage
+     *
+     * @var string
+     */
+    protected $sliderImage;
 
-	/**
-	 * Returns the sliderId
-	 *
-	 * @return integer $sliderId
-	 */
-	public function getSliderId() {
-		return $this->sliderId;
-	}
+    /**
+     * The SliderImage TEmp
+     *
+     * @var string
+     */
+    protected $sliderImageTemp;
 
-	/**
-	 * Sets the sliderId
-	 *
-	 * @param integer $sliderId
-	 * @return void
-	 */
-	public function setSliderId($sliderId) {
-		$this->sliderId = $sliderId;
-	}
+    /**
+     * The SliderLink
+     *
+     * @var string
+     */
+    protected $sliderLink;
 
-	/**
-	 * Returns the sliderHeadline
-	 *
-	 * @return string $sliderHeadline
-	 */
-	public function getSliderHeadline() {
-		return $this->sliderHeadline;
-	}
+    /**
+     * Returns the sliderId
+     *
+     * @return integer $sliderId
+     */
+    public function getSliderId() {
+        return $this->sliderId;
+    }
 
-	/**
-	 * Sets the sliderHeadline
-	 *
-	 * @param string $sliderHeadline
-	 * @return void
-	 */
-	public function setSliderHeadline($sliderHeadline) {
-		$this->sliderHeadline = $sliderHeadline;
-	}
+    /**
+     * Sets the sliderId
+     *
+     * @param integer $sliderId
+     * @return void
+     */
+    public function setSliderId($sliderId) {
+        $this->sliderId = $sliderId;
+    }
 
-	/**
-	 * Returns the sliderText
-	 *
-	 * @return string $sliderText
-	 */
-	public function getSliderText() {
-		return $this->sliderText;
-	}
+    /**
+     * Returns the sliderHeadline
+     *
+     * @return string $sliderHeadline
+     */
+    public function getSliderHeadline() {
+        return $this->sliderHeadline;
+    }
 
-	/**
-	 * Sets the sliderText
-	 *
-	 * @param string $sliderText
-	 * @return void
-	 */
-	public function setSliderText($sliderText) {
-		$this->sliderText = $sliderText;
-	}
+    /**
+     * Sets the sliderHeadline
+     *
+     * @param string $sliderHeadline
+     * @return void
+     */
+    public function setSliderHeadline($sliderHeadline) {
+        $this->sliderHeadline = $sliderHeadline;
+    }
 
-	/**
-	 * Returns the sliderPrevImage
-	 *
-	 * @return string $sliderPrevImage
-	 */
-	public function getSliderPrevImage() {
-		return $this->sliderPrevImage;
-	}
+    /**
+     * Returns the sliderText
+     *
+     * @return string $sliderText
+     */
+    public function getSliderText() {
+        return $this->sliderText;
+    }
 
-	/**
-	 * Sets the sliderPrevImage
-	 *
-	 * @param string $sliderPrevImage
-	 * @return void
-	 */
-	public function setSliderPrevImage($sliderPrevImage) {
-		$this->sliderPrevImage = $sliderPrevImage;
-	}
+    /**
+     * Sets the sliderText
+     *
+     * @param string $sliderText
+     * @return void
+     */
+    public function setSliderText($sliderText) {
+        $this->sliderText = $sliderText;
+    }
 
-	/**
-	 * Returns the sliderImage
-	 *
-	 * @return string $sliderImage
-	 */
-	public function getSliderImage() {
-		return $this->sliderImage;
-	}
+    /**
+     * Returns the sliderPrevImage
+     *
+     * @return string $sliderPrevImage
+     */
+    public function getSliderPrevImage() {
+        return $this->sliderPrevImage;
+    }
 
-	/**
-	 * Sets the sliderImage
-	 *
-	 * @param string $sliderImage
-	 * @return void
-	 */
-	public function setSliderImage($sliderImage) {
-		$this->sliderImage = $sliderImage;
-	}
+    /**
+     * Sets the sliderPrevImage
+     *
+     * @param string $sliderPrevImage
+     * @return void
+     */
+    public function setSliderPrevImage($sliderPrevImage) {
+        $this->sliderPrevImage = $sliderPrevImage;
+    }
+
+    /**
+     * Returns the sliderImage
+     *
+     * @return string $sliderImage
+     */
+    public function getSliderImage() {
+        return $this->sliderImage;
+    }
+
+    /**
+     * Sets the sliderImage
+     *
+     * @param string $sliderImage
+     * @return void
+     */
+    public function setSliderImage($sliderImage) {
+        $this->sliderImage = $sliderImage;
+    }
+
+    /**
+     * Returns the sliderImageTemp
+     *
+     * @return string $sliderImageTemp
+     */
+    public function getSliderImageTemp() {
+        return $this->sliderImageTemp;
+    }
+
+    /**
+     * Sets the sliderImageTemap
+     *
+     * @param string $sliderImageTemp
+     * @return void
+     */
+    public function setSliderImageTemp($sliderImageTemp) {
+        $this->sliderImageTemp = $sliderImageTemp;
+    }
+
+    /**
+     * Returns the sliderLink
+     *
+     * @return string $sliderLink
+     */
+    public function getSliderLink() {
+        return $this->sliderLink;
+    }
+
+    /**
+     * Sets the sliderImageTemap
+     *
+     * @param string $sliderLink
+     * @return void
+     */
+    public function setSliderLink($sliderLink) {
+        $this->sliderLink = $sliderLink;
+    }
 
 }
+
 ?>
