@@ -26,7 +26,7 @@ plugin.tx_responsivetemplate {
 		sliderPid = 
 
                 #cat=responsive Template/4_language/#010; type=boolean; label= Activate Second Website Language: You have to add a sytemrecord Language on root level, see manual!
-		useLanguage = 1
+		useLanguage = 0
                 #cat=responsive Template/4_language/#020; type=string; label= First website language: Label for Language Menue, e.g. "German" or "English".
 		firstLanguageName = 
                 #cat=responsive Template/4_language/#030; type=string; label= Second website language: Label for Language Menue, e.g. "German" or "English".

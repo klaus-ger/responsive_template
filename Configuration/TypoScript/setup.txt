@@ -156,7 +156,7 @@ config {
     pageNotFound_handling               = 1
     xhtml_cleaning                      = all
     xmlprologue                         = none
-    htmlTag_setParams                   = xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$plugin.tx_responsivetemplate.settings.languagekey}" lang="{$plugin.tx_responsivetemplate.settings.languagekey}"
+    htmlTag_setParams                   = html:lang="{$plugin.tx_responsivetemplate.settings.languagekey}" lang="{$plugin.tx_responsivetemplate.settings.languagekey}"
 
     removeDefaultJS                     = external
     inlineStyle2TempFile                = 1
@@ -179,7 +179,7 @@ config {
 config {
     sys_language_uid = 1
     language         = {$plugin.tx_responsivetemplate.settings.secondlanguagekey}
-    htmlTag_setParams = xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$plugin.tx_responsivetemplate.settings.secondlanguagekey}" lang="{$plugin.tx_responsivetemplate.settings.secondlanguagekey}"
+    htmlTag_setParams = html:lang="{$plugin.tx_responsivetemplate.settings.secondlanguagekey}"
 
 }
 [global]

@@ -14,7 +14,7 @@ lib.mainMenu {
       expAll = 1
       noBlur = 1
 
-      NO.wrapItemAndSub = <li class="first>|</li>|*|<li>|</li>|*|<li class="last">|</li>      
+      NO.wrapItemAndSub = <li class="first">|</li>|*|<li>|</li>|*|<li class="last">|</li>      
       ACT < .NO
       ACT = 1
       ACT.ATagParams = class="active"
