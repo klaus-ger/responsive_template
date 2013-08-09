@@ -34,7 +34,8 @@ lib.mainMenu {
 lib.language_switch = HMENU
 lib.language_switch {
 	special = language
-	special.value = 1,0
+        #change the next Line if you only need two languages to: special.value = 1,0
+	special.value = 2,1,0
 	special.normalWhenNoLanguage = 0
 	wrap = <ul id="language_switch">|</ul>
 	1 = TMENU
@@ -44,10 +45,10 @@ lib.language_switch {
 		NO = 1
 		NO {
 			linkWrap = <li>|</li>
-                        stdWrap.override = {$plugin.tx_responsivetemplate.settings.firstLanguageName} || {$plugin.tx_responsivetemplate.settings.secondLanguageName}
+                        stdWrap.override = {$plugin.tx_responsivetemplate.settings.firstLanguageName} || {$plugin.tx_responsivetemplate.settings.secondLanguageName} || {$plugin.tx_responsivetemplate.settings.thirdLanguageName}
                         doNotLinkIt = 1
                         stdWrap.typolink.parameter.data = page:uid
-			stdWrap.typolink.additionalParams = &L=0 || &L=1
+			stdWrap.typolink.additionalParams = &L=0 || &L=1 || &L=2
 			stdWrap.typolink.addQueryString = 1
 			stdWrap.typolink.addQueryString.exclude = L,id,cHash,no_cache
 			stdWrap.typolink.addQueryString.method = GET

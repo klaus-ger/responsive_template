@@ -19,13 +19,17 @@ plugin.tx_responsivetemplate {
 		languageall = en_US.UTF8
                 #cat=responsive Template/1_pagesettings/#080; type=file{css}; label= Own CSS: You can add here your own CSS (overwrites the sytestile.css) Don NOT storage this file in the Extension Folder, it will lost by updates!
 		owncss = fileadmin 
+                #cat=responsive Template/1_pagesettings/#090; type=string; label= Meta Tag Description: If page description is empty, this text will be shown in the meta tag.
+		metadescription =  
+                #cat=responsive Template/1_pagesettings/#100; type=string; label= Meta Tag Keywords: If page keywords are empty, this keywords will be shown in the meta tag. keyword1, keyword2, ....
+		metakeywords =  
                 # cat=responsive Template/2_logosettings/#110; type=string; label= Header Logo: choose your header logo file, max width 990px. 
 		logofile = fileadmin/
 		
                 #cat=responsive Template/3_slider/#010; type=string; label= Storage PID Slider: Pid of slider storage folder angeben
 		sliderPid = 
 
-                #cat=responsive Template/4_language/#010; type=boolean; label= Activate Second Website Language: You have to add a sytemrecord Language on root level, see manual!
+                #cat=responsive Template/4_language/#010; type=boolean; label= Activate second and third Website Language: You have to add a sytemrecord Language on root level, see manual!
 		useLanguage = 0
                 #cat=responsive Template/4_language/#020; type=string; label= First website language: Label for Language Menue, e.g. "German" or "English".
 		firstLanguageName = 
@@ -33,8 +37,14 @@ plugin.tx_responsivetemplate {
 		secondLanguageName = 
                 #cat=responsive Template/4_language/#040; type=string; label= Second Language Key: Constant for config "language" and "htmlTag_langKey" like de or en
 		secondlanguagekey = en
-                #cat=responsive Template/4_language/#070; type=string; label= Second Language locale_all: Constant for config "locale_all" like de_DE.UTF8 or en_US.UTF8
+                #cat=responsive Template/4_language/#050; type=string; label= Second Language locale_all: Constant for config "locale_all" like de_DE.UTF8 or en_US.UTF8
 		secondlanguageall = en_US.UTF8
+                #cat=responsive Template/4_language/#060; type=string; label= Third website language: Label for Language Menue, e.g. "German" or "English".
+		thirdLanguageName = 
+                #cat=responsive Template/4_language/#070; type=string; label= Third Language Key: Constant for config "language" and "htmlTag_langKey" like de or en
+		thirdlanguagekey = en
+                #cat=responsive Template/4_language/#080; type=string; label= Third Language locale_all: Constant for config "locale_all" like de_DE.UTF8 or en_US.UTF8
+		thirdlanguageall = en_US.UTF8
                 }
 }
 
@@ -54,6 +64,12 @@ config {
         robots              = index,follow
         apple-mobile-web-app-capable = no
         compatible          = IE=edge,chrome=1
+description.data = page:description
+        description.ifEmpty.data  = {$plugin.tx_responsivetemplate.settings.metadescription}
+        description.insertData = 1
+
+        keywords.data = page:keywords
+        keywords.ifEmpty.data =  {$plugin.tx_responsivetemplate.settings.metakeywords}
     }
 
     headerComment           = 
