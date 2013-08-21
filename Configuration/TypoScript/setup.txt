@@ -177,7 +177,8 @@ config {
     
     uniqueLinkVars                      = 1
     linkVars                            = L
-    
+    sys_language_overlay                = hideNonTranslated
+
     renderCharset                       = utf-8
     metaCharset                         = utf-8
     pageNotFound_handling               = 1
@@ -204,7 +205,7 @@ config {
 }
 [globalVar = GP:L = 1]
     config {
-        sys_language_uid = 1
+        sys_language_uid = {$plugin.tx_responsivetemplate.settings.secondLanguageUid}
         language         = {$plugin.tx_responsivetemplate.settings.secondlanguagekey}
         htmlTag_setParams = html:lang="{$plugin.tx_responsivetemplate.settings.secondlanguagekey}"
         }
@@ -214,7 +215,7 @@ config {
 
 [globalVar = GP:L = 2]
     config {
-        sys_language_uid = 2
+        sys_language_uid = {$plugin.tx_responsivetemplate.settings.thirdLanguageUid}
         language         = {$plugin.tx_responsivetemplate.settings.thirdlanguagekey}
         htmlTag_setParams = html:lang="{$plugin.tx_responsivetemplate.settings.thirdlanguagekey}"
         }

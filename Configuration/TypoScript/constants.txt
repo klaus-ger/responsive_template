@@ -3,6 +3,7 @@
 # customsubcategory =2_logosettings= Logo
 # customsubcategory =3_slider= Slider Plugin
 # customsubcategory =4_language= Second Language Settings
+# customsubcategory =5_language= Third Language Settings
 
 
 
@@ -29,21 +30,28 @@ plugin.tx_responsivetemplate {
                 #cat=responsive Template/3_slider/#010; type=string; label= Storage PID Slider: Pid of slider storage folder angeben
 		sliderPid = 
 
-                #cat=responsive Template/4_language/#010; type=boolean; label= Activate second and third Website Language: You have to add a sytemrecord Language on root level, see manual!
+                #cat=responsive Template/4_language/#010; type=boolean; label= Activate second Website Language: You have to add a sytemrecord Language on root level, see manual!
 		useLanguage = 0
                 #cat=responsive Template/4_language/#020; type=string; label= First website language: Label for Language Menue, e.g. "German" or "English".
 		firstLanguageName = 
                 #cat=responsive Template/4_language/#030; type=string; label= Second website language: Label for Language Menue, e.g. "German" or "English".
 		secondLanguageName = 
+                #cat=responsive Template/4_language/#035; type=string; label= Second Language UID: Uid of the language system record
+		secondLanguageUid = 1
                 #cat=responsive Template/4_language/#040; type=string; label= Second Language Key: Constant for config "language" and "htmlTag_langKey" like de or en
 		secondlanguagekey = en
                 #cat=responsive Template/4_language/#050; type=string; label= Second Language locale_all: Constant for config "locale_all" like de_DE.UTF8 or en_US.UTF8
 		secondlanguageall = en_US.UTF8
-                #cat=responsive Template/4_language/#060; type=string; label= Third website language: Label for Language Menue, e.g. "German" or "English".
-		thirdLanguageName = 
-                #cat=responsive Template/4_language/#070; type=string; label= Third Language Key: Constant for config "language" and "htmlTag_langKey" like de or en
+                
+                #cat=responsive Template/5_language/#055; type=boolean; label= Activate third Website Language: You have to add a sytemrecord Language on root level, see manual!
+		useThirdLanguage = 0
+                #cat=responsive Template/5_language/#060; type=string; label= Third website language: Label for Language Menue, e.g. "German" or "English".
+		thirdLanguageName =
+                #cat=responsive Template/5_language/#065; type=string; label= Third Language UID: Uid of the language system record
+		thirdLanguageUid = 2 
+                #cat=responsive Template/5_language/#070; type=string; label= Third Language Key: Constant for config "language" and "htmlTag_langKey" like de or en
 		thirdlanguagekey = en
-                #cat=responsive Template/4_language/#080; type=string; label= Third Language locale_all: Constant for config "locale_all" like de_DE.UTF8 or en_US.UTF8
+                #cat=responsive Template/5_language/#080; type=string; label= Third Language locale_all: Constant for config "locale_all" like de_DE.UTF8 or en_US.UTF8
 		thirdlanguageall = en_US.UTF8
                 }
 }
@@ -64,12 +72,7 @@ config {
         robots              = index,follow
         apple-mobile-web-app-capable = no
         compatible          = IE=edge,chrome=1
-description.data = page:description
-        description.ifEmpty.data  = {$plugin.tx_responsivetemplate.settings.metadescription}
-        description.insertData = 1
 
-        keywords.data = page:keywords
-        keywords.ifEmpty.data =  {$plugin.tx_responsivetemplate.settings.metakeywords}
     }
 
     headerComment           = 

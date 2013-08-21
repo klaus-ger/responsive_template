@@ -30,12 +30,18 @@ lib.mainMenu {
 
 }
 
+
 # Language Select
 lib.language_switch = HMENU
+lib.language_switch.special = language
+lib.language_switch.special.value = 1,0
+
+#Condition if third language is set -> then display in language Menue
+[globalVar = LIT:1 = {$plugin.tx_responsivetemplate.settings.useThirdLanguage}]
+    lib.language_switch.special.value = 2,1,0
+[global]
+
 lib.language_switch {
-	special = language
-        #change the next Line if you only need two languages to: special.value = 1,0
-	special.value = 2,1,0
 	special.normalWhenNoLanguage = 0
 	wrap = <ul id="language_switch">|</ul>
 	1 = TMENU
