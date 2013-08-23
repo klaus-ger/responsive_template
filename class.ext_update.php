@@ -97,7 +97,7 @@ class ext_update {
            'uid'   => '1'
           ,'pid'   =>  $templatePID 
           ,'title' => "Two Cols + Header 66% | 33%"
-          ,'config' =>"backend_layout {\r\n	colCount = 2\r\n	rowCount = 2\r\n	rows {\r\n		1 {\r\n			columns {\r\n				1 {\r\n					name = SLIDER\r\n					colspan = 2\r\n					colPos = 0\r\n				}\r\n			}\r\n		}\r\n		2 {\r\n			columns {\r\n				1 {\r\n					name = Content\r\n					colPos = 1\r\n				}\r\n				2 {\r\n					name = Sidebar\r\n					colPos = 2\r\n				}\r\n                }\r\n    }\r\n}\r\n}\r\n"
+          ,'config' =>"backend_layout {\r\n	colCount = 3\r\n	rowCount = 2\r\n	rows {\r\n		1 {\r\n			columns {\r\n				1 {\r\n					name = TOP\r\n					colspan = 3\r\n					colPos = 0\r\n				}\r\n			}\r\n		}\r\n		2 {\r\n			columns {\r\n				1 {\r\n					name = Content\r\n					colspan = 2\r\n					colPos = 1\r\n				}\r\n				2 {\r\n					name = Sidebar\r\n					colPos = 2\r\n				}\r\n                }\r\n    }\r\n}\r\n}\r\n"
          );     
         $query = $GLOBALS['TYPO3_DB']->exec_INSERTquery('backend_layout', $insertArray);
 
@@ -105,7 +105,7 @@ class ext_update {
            'uid'   => '2'
           ,'pid'   =>  $templatePID 
           ,'title' => "One Col + Header"
-          ,'config' => "backend_layout {\r\n	colCount = 1\r\n	rowCount = 2\r\n	rows {\r\n		1 {\r\n			columns {\r\n				1 {\r\n					name = SLIDER\r\n					colPos = 0\r\n				}\r\n			}\r\n		}\r\n		2 {\r\n			columns {\r\n				1 {\r\n					name = CONTENT_NORMAL\r\n					colPos = 1\r\n				}\r\n			}\r\n		}\r\n	}\r\n}\r\n"
+          ,'config' => "backend_layout {\r\n	colCount = 1\r\n	rowCount = 2\r\n	rows {\r\n		1 {\r\n			columns {\r\n				1 {\r\n					name = TOP\r\n					colPos = 0\r\n				}\r\n			}\r\n		}\r\n		2 {\r\n			columns {\r\n				1 {\r\n					name = CONTENT_NORMAL\r\n					colPos = 1\r\n				}\r\n			}\r\n		}\r\n	}\r\n}\r\n"
                 );
         $query = $GLOBALS['TYPO3_DB']->exec_INSERTquery('backend_layout', $insertArray);
 
@@ -113,11 +113,18 @@ class ext_update {
            'uid'   => '3'
           ,'pid'   =>  $templatePID 
           ,'title' => "Three Cols + Header"
-          ,'config' => "backend_layout {\r\n	colCount = 3\r\n	rowCount = 2\r\n	rows {\r\n		1 {\r\n			columns {\r\n				1 {\r\n					name = SLIDER\r\n					colspan = 3\r\n					colPos = 0\r\n				}\r\n			}\r\n		}\r\n		2 {\r\n			columns {\r\n				1 {\r\n					name = Links	\r\n					colPos = 1\r\n				}\r\n                               2 {\r\n                                      name = Mitte\r\n                                      colPos = 2\r\n                              }\r\n                              3 {\r\n                                     name = Rechts\r\n                                     colPos = 3\r\n                               }\r\n                       }\r\n                }\r\n		\r\n		\r\n       }\r\n}"
+          ,'config' => "backend_layout {\r\n	colCount = 3\r\n	rowCount = 2\r\n	rows {\r\n		1 {\r\n			columns {\r\n				1 {\r\n					name = TOP\r\n					colspan = 3\r\n					colPos = 0\r\n				}\r\n			}\r\n		}\r\n		2 {\r\n			columns {\r\n				1 {\r\n					name = Links	\r\n					colPos = 1\r\n				}\r\n                               2 {\r\n                                      name = Mitte\r\n                                      colPos = 2\r\n                              }\r\n                              3 {\r\n                                     name = Rechts\r\n                                     colPos = 3\r\n                               }\r\n                       }\r\n                }\r\n		\r\n		\r\n       }\r\n}"
          );
         $query = $GLOBALS['TYPO3_DB']->exec_INSERTquery('backend_layout', $insertArray);
 
-        
+        $insertArray = array(
+           'uid'   => '4'
+          ,'pid'   =>  $templatePID 
+          ,'title' => "Two Cols + Header 33% | 66%"
+          ,'config' =>"backend_layout {\r\n	colCount = 3\r\n	rowCount = 2\r\n	rows {\r\n		1 {\r\n			columns {\r\n				1 {\r\n					name = TOP\r\n					colspan = 3\r\n					colPos = 0\r\n				}\r\n			}\r\n		}\r\n		2 {\r\n			columns {\r\n				1 {\r\n					name = Sidebar\r\n					colPos = 2\r\n				}\r\n				2 {\r\n					name = Content\r\n					colPos = 1\r\n					colspan = 2\r\n				}\r\n                }\r\n    }\r\n}\r\n}\r\n"
+         );
+        $query = $GLOBALS['TYPO3_DB']->exec_INSERTquery('backend_layout', $insertArray);
+
 //$res = $GLOBALS['TYPO3_DB']->sql(TYPO3_db, $query);
     }
 

@@ -4,7 +4,7 @@
 #
 ####################################################
 
-# MAIN Navigation
+## MAIN Navigation
 lib.mainMenu = HMENU
 lib.mainMenu {
     ## FIRST LEVEL ###
@@ -22,16 +22,14 @@ lib.mainMenu {
    
     ## next LEVEL ###
     2 < .1
-    2.NO.wrapItemAndSub = <li>|</li>
     3 < .1
-    3.NO.wrapItemAndSub = <li>|</li>
     4 < .1
-    4.NO.wrapItemAndSub = <li>|</li>
+    
 
 }
 
 
-# Language Select
+## Language Select
 lib.language_switch = HMENU
 lib.language_switch.special = language
 lib.language_switch.special.value = 1,0
@@ -66,4 +64,21 @@ lib.language_switch {
 		USERDEF1 < .NO
 		USERDEF2 < .ACT
 	}
+}
+
+## Second Menu 
+
+lib.secondNavi = HMENU
+lib.secondNavi.entryLevel=1
+lib.secondNavi.1 = TMENU
+lib.secondNavi.1 {
+  wrap = <ul id="secondNavi">|</ul>
+  expAll = 0
+  NO.allWrap = <li>|</li>
+  RO < .NO
+  RO = 1
+  CUR < .NO
+  CUR = 1
+  CUR.allWrap = <li class="active">|</li>
+  ACT < .CUR
 }

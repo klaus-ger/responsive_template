@@ -1,6 +1,7 @@
 ## Define custom categories
 # customsubcategory =1_pagesettings= General Settings
 # customsubcategory =2_logosettings= Logo
+# customsubcategory =6_secondmenu = Second Menu Settings
 # customsubcategory =3_slider= Slider Plugin
 # customsubcategory =4_language= Second Language Settings
 # customsubcategory =5_language= Third Language Settings
@@ -27,6 +28,11 @@ plugin.tx_responsivetemplate {
                 # cat=responsive Template/2_logosettings/#110; type=string; label= Header Logo: choose your header logo file, max width 990px. 
 		logofile = fileadmin/
 		
+                #cat=responsive Template/6_secondmenu/#010; type=boolean; label= Second Menu Left Col: If set, a second Menu is displayed in the left col.
+		secondMenuLeft = 1
+                #cat=responsive Template/6_secondmenu/#020; type=boolean; label= Second Menu Right Col: If set, a second Menu is displayed in the right col.
+		secondMenuRight = 1
+                
                 #cat=responsive Template/3_slider/#010; type=string; label= Storage PID Slider: Pid of slider storage folder angeben
 		sliderPid = 
 

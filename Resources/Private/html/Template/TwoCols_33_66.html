@@ -6,16 +6,19 @@
         <f:cObject typoscriptObjectPath="lib.slider" />
     </div>
     
-    <div class="contentwrap wrap2cols clearafter">
+    <div class="contentwrap wrap2colsContentRight clearafter">
         
-        <div class="twocol-main">
+        <div class="twocol-main-right">
             <div class="colinside">
                 <f:cObject typoscriptObjectPath="lib.content " /> 
             </div>
         </div>
         
-        <div class="twocol-right">
+        <div class="twocol-left">
             <div class="colinside">
+                <f:if condition="{secondMenuLeft}" >
+                <f:cObject typoscriptObjectPath="lib.secondNavi" />
+                </f:if>
                 <f:cObject typoscriptObjectPath="lib.contentRight " /> 
             </div>
         </div>
