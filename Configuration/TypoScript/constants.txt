@@ -1,10 +1,10 @@
 ## Define custom categories
 # customsubcategory =1_pagesettings= General Settings
 # customsubcategory =2_logosettings= Logo
-# customsubcategory =6_secondmenu = Second Menu Settings
-# customsubcategory =3_slider= Slider Plugin
-# customsubcategory =4_language= Second Language Settings
-# customsubcategory =5_language= Third Language Settings
+# customsubcategory =3_secondmenu= Second Menu Settings
+# customsubcategory =4_slider= Slider Plugin
+# customsubcategory =5_language= Second Language Settings
+# customsubcategory =6_language= Third Language Settings
 
 
 
@@ -13,6 +13,8 @@ plugin.tx_responsivetemplate {
 	settings {
                 # cat=responsive Template/1_pagesettings/#020; type=string; label= Base URL: base URL Format http://www.meineDomain.de/
 		baseUrl = http://www.meineDomain.de/
+                # cat=responsive Template/1_pagesettings/#025; type=string; label= Pid of the Page you use as footer(hide this page in menu, use the 3-col Template, details see manual)
+		footerPid = 9
                 # cat=responsive Template/1_pagesettings/#040; type=boolean; label= Real URL: activate RealURL? (realURL EXT must be installed)
 		realUrl = 0
                 #cat=responsive Template/1_pagesettings/#060; type=string; label= Language Key: Constant for config "language" and "htmlTag_langKey" like de or en
@@ -25,39 +27,44 @@ plugin.tx_responsivetemplate {
 		metadescription =  
                 #cat=responsive Template/1_pagesettings/#100; type=string; label= Meta Tag Keywords: If page keywords are empty, this keywords will be shown in the meta tag. keyword1, keyword2, ....
 		metakeywords =  
+                #cat=responsive Template/1_pagesettings/#110; type=boolean; label= Load jQuery Lib in Header: If set, the jQuery Lib will loaded in header section instead footer section (some Extensions need the jQueryLib in Header).
+		jQueryLoadOnTop = 0
+                #cat=responsive Template/1_pagesettings/#110; type=boolean; label= Load jQuery Lib in Footer: If set, the jQuery Lib will loaded in footer section (standard).
+		jQueryLoadOnFooter = 1
+
                 # cat=responsive Template/2_logosettings/#110; type=string; label= Header Logo: choose your header logo file, max width 990px. 
 		logofile = fileadmin/
 		
-                #cat=responsive Template/6_secondmenu/#010; type=boolean; label= Second Menu Left Col: If set, a second Menu is displayed in the left col.
+                #cat=responsive Template/3_secondmenu/#010; type=boolean; label= Second Menu Left Col: If set, a second Menu is displayed in the left col (Only in 2-cols templates).
 		secondMenuLeft = 1
-                #cat=responsive Template/6_secondmenu/#020; type=boolean; label= Second Menu Right Col: If set, a second Menu is displayed in the right col.
-		secondMenuRight = 1
+                #cat=responsive Template/3_secondmenu/#020; type=boolean; label= Second Menu Right Col: If set, a second Menu is displayed in the right col (Only in 2-cols templates).
+		secondMenuRight = 0
                 
-                #cat=responsive Template/3_slider/#010; type=string; label= Storage PID Slider: Pid of slider storage folder angeben
+                #cat=responsive Template/4_slider/#010; type=string; label= Storage PID Slider: Pid of slider storage folder angeben
 		sliderPid = 
 
-                #cat=responsive Template/4_language/#010; type=boolean; label= Activate second Website Language: You have to add a sytemrecord Language on root level, see manual!
+                #cat=responsive Template/5_language/#010; type=boolean; label= Activate second Website Language: You have to add a sytemrecord Language on root level, see manual!
 		useLanguage = 0
-                #cat=responsive Template/4_language/#020; type=string; label= First website language: Label for Language Menue, e.g. "German" or "English".
+                #cat=responsive Template/5_language/#020; type=string; label= First website language: Label for Language Menue, e.g. "German" or "English".
 		firstLanguageName = 
-                #cat=responsive Template/4_language/#030; type=string; label= Second website language: Label for Language Menue, e.g. "German" or "English".
+                #cat=responsive Template/5_language/#030; type=string; label= Second website language: Label for Language Menue, e.g. "German" or "English".
 		secondLanguageName = 
-                #cat=responsive Template/4_language/#035; type=string; label= Second Language UID: Uid of the language system record
+                #cat=responsive Template/5_language/#035; type=string; label= Second Language UID: Uid of the language system record
 		secondLanguageUid = 1
-                #cat=responsive Template/4_language/#040; type=string; label= Second Language Key: Constant for config "language" and "htmlTag_langKey" like de or en
+                #cat=responsive Template/5_language/#040; type=string; label= Second Language Key: Constant for config "language" and "htmlTag_langKey" like de or en
 		secondlanguagekey = en
-                #cat=responsive Template/4_language/#050; type=string; label= Second Language locale_all: Constant for config "locale_all" like de_DE.UTF8 or en_US.UTF8
+                #cat=responsive Template/5_language/#050; type=string; label= Second Language locale_all: Constant for config "locale_all" like de_DE.UTF8 or en_US.UTF8
 		secondlanguageall = en_US.UTF8
                 
-                #cat=responsive Template/5_language/#055; type=boolean; label= Activate third Website Language: You have to add a sytemrecord Language on root level, see manual!
+                #cat=responsive Template/6_language/#055; type=boolean; label= Activate third Website Language: You have to add a sytemrecord Language on root level, see manual!
 		useThirdLanguage = 0
-                #cat=responsive Template/5_language/#060; type=string; label= Third website language: Label for Language Menue, e.g. "German" or "English".
+                #cat=responsive Template/6_language/#060; type=string; label= Third website language: Label for Language Menue, e.g. "German" or "English".
 		thirdLanguageName =
-                #cat=responsive Template/5_language/#065; type=string; label= Third Language UID: Uid of the language system record
+                #cat=responsive Template/6_language/#065; type=string; label= Third Language UID: Uid of the language system record
 		thirdLanguageUid = 2 
-                #cat=responsive Template/5_language/#070; type=string; label= Third Language Key: Constant for config "language" and "htmlTag_langKey" like de or en
+                #cat=responsive Template/6_language/#070; type=string; label= Third Language Key: Constant for config "language" and "htmlTag_langKey" like de or en
 		thirdlanguagekey = en
-                #cat=responsive Template/5_language/#080; type=string; label= Third Language locale_all: Constant for config "locale_all" like de_DE.UTF8 or en_US.UTF8
+                #cat=responsive Template/6_language/#080; type=string; label= Third Language locale_all: Constant for config "locale_all" like de_DE.UTF8 or en_US.UTF8
 		thirdlanguageall = en_US.UTF8
                 }
 }

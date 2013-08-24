@@ -91,8 +91,10 @@ img, #logo {
 }
 
 #footer {
-    
+    max-width: 980px;
     min-height: 80px;
+    margin-top: 15px;
+    background-color: #efefef;
 }
 
 
@@ -102,7 +104,7 @@ img, #logo {
   width:100%; 
   max-width: 980px;  
   z-index:0; 
-  xposition:relative; 
+ 
 }
 
 .headerContent {
@@ -110,7 +112,7 @@ img, #logo {
     max-width: 980px;    
     display: block;
     z-index:1; 
-    xposition:absolute;   
+  
 }
 
 /* Col Wrapper and Cols*********************/
@@ -130,8 +132,8 @@ img, #logo {
     border-top: 1px solid #ededed;
 }
 
-.wrap1cols {
-    background-image: url("../images/contentbg-3cols.png");
+.wrap1col {
+    background-image: url("../images/contentbg-1col.png");
     background-size: contain;
 }
 
@@ -224,8 +226,21 @@ img, #logo {
 .footer-inner {
     max-width: 980px;
     margin: 0 auto;
-    
     padding: 1%;
+
+}
+.footer-inner p, .footer-inner h1, .footer-inner h2, .footer-inner h3{
+    font-size: 95%;
+}
+.footer-left {
+    width: 31%;
+    float:left;
+    margin-left: 1%;
+}
+.footer-center, .footer-right {
+    width: 31%;
+    float:left;
+    margin-left: 3%;
 }
 
 /* Menüs *************************************/
@@ -444,7 +459,7 @@ a.button:hover {
    color: #fff;
     
 }
-/* media querie handhelds less than 760px  and greater than 360px********************************/
+/* media querie handhelds less than 760px  and greater than 230px********************************/
 /* class for Galaxy (380px) an IPhone (320 px) */
 /* class name: mobil */
 @media screen and  (min-width: 230px) and (max-width: 759px) {
@@ -485,10 +500,15 @@ a.button:hover {
     .contentwrap {
         background-image: none;
     }
-    .threecol, .twocol-main, .twocol-right {
+    .threecol, .twocol-main, .twocol-main-right, .twocol-right, .twocol-left {
         float: none;
         width: 100%;
         margin: 0%;
+    }
+    .footer-left, .footer-center, .footer-right {
+        float: none;
+        width: 100%;
+        margin: 1%;
     }
     
 }

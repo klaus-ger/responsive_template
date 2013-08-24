@@ -20,7 +20,14 @@ lib.header = TEXT
 lib.header {
     data = page:title
 }
-
+[globalVar = LIT:{$plugin.tx_responsivetemplate.settings.footerPid} > 0]
+lib.contentFooterCenter   < styles.content.getRight
+lib.contentFooterCenter.select.pidInList = {$plugin.tx_responsivetemplate.settings.footerPid} 
+lib.contentFooterLeft   < styles.content.getLeft
+lib.contentFooterLeft.select.pidInList = {$plugin.tx_responsivetemplate.settings.footerPid} 
+lib.contentFooterRight   < styles.content.getBorder
+lib.contentFooterRight.select.pidInList = {$plugin.tx_responsivetemplate.settings.footerPid} 
+[global]
 
 tt_content.image.20 {
   imageStdWrap.dataWrap = <div class="csc-textpic-imagewrap"> | </div>
@@ -168,16 +175,10 @@ page {
         modernizr.forceOnTop= 1
     }
 
-    includeJSFooterlibs  {
-        jquery              = EXT:responsive_template/Resources/Public/javascript/jquery-1.8.0.min.js
-        jquery.forceOnTop   = 1       
-    }
 
     includeJSFooter {   
         sitescript          = EXT:responsive_template/Resources/Public/javascript/sitescript.js
     }
-
-
 
 }
 
@@ -215,6 +216,10 @@ config {
 
    
 }
+
+## CONDITIONS ##################################################################
+
+## Language Conditions
 [globalVar = GP:L = 1]
     config {
         sys_language_uid = {$plugin.tx_responsivetemplate.settings.secondLanguageUid}
@@ -233,4 +238,19 @@ config {
         }
     linkVars = L
     uniqueLinkVars = 2
+[global]
+
+
+## jQuery Conditions
+[globalVar = LIT:1 = {$plugin.tx_responsivetemplate.settings.jQueryLoadOnFooter}]
+    page.includeJSFooterlibs  {
+    jquery              = EXT:responsive_template/Resources/Public/javascript/jquery-1.8.0.min.js
+    jquery.forceOnTop   = 1       
+    }
+[global]
+
+[globalVar = LIT:1 = {$plugin.tx_responsivetemplate.settings.jQueryLoadOnTop}]
+    page.includeJSlibs  {
+    jquery              = EXT:responsive_template/Resources/Public/javascript/jquery-1.8.0.min.js      
+    }
 [global]
