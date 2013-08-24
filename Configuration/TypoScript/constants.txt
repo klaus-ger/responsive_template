@@ -14,7 +14,7 @@ plugin.tx_responsivetemplate {
                 # cat=responsive Template/1_pagesettings/#020; type=string; label= Base URL: base URL Format http://www.meineDomain.de/
 		baseUrl = http://www.meineDomain.de/
                 # cat=responsive Template/1_pagesettings/#025; type=string; label= Pid of the Page you use as footer(hide this page in menu, use the 3-col Template, details see manual)
-		footerPid = 9
+		footerPid = 
                 # cat=responsive Template/1_pagesettings/#040; type=boolean; label= Real URL: activate RealURL? (realURL EXT must be installed)
 		realUrl = 0
                 #cat=responsive Template/1_pagesettings/#060; type=string; label= Language Key: Constant for config "language" and "htmlTag_langKey" like de or en
@@ -72,7 +72,7 @@ plugin.tx_responsivetemplate {
 
 config {
 
-    no_cache                = 1
+    no_cache                = 0
 
     baseUrl                 = {$plugin.tx_responsivetemplate.settings.baseUrl}
     shortcutIcon            = EXT:responsive_template/Resources/Public/icons/frontendicons/favicon.ico
