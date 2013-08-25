@@ -190,7 +190,7 @@ config {
     
     uniqueLinkVars                      = 1
     linkVars                            = L
-    sys_language_overlay                = hideNonTranslated
+    #sys_language_overlay                = hideNonTranslated
 
     renderCharset                       = utf-8
     metaCharset                         = utf-8
