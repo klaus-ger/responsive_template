@@ -8,5 +8,5 @@ It provides a complete page-setup, 4 different backend/frontend Layouts, mutlila
 Screenshoots:
 
 <p align="center" >
-  <img src="https://raw.github.com/klaus-ger/ProjectsAndTasks/master/doc/TodoForm.png" >
+  <img src="https://raw.github.com/klaus-ger/responsive_template/master/doc/responsive_screenshoot.jpg" >
 </p>
