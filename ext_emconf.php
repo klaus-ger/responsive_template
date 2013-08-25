@@ -11,7 +11,7 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'Resonsive Template',
+	'title' => 'Responsive Template',
 	'description' => 'A responsive Template for TYPO3 4.7 / 6.1 ready to use. One Click to install, including three different backend / frontend layouts (based on fluid) and a responsive slider.',
 	'category' => 'templates',
 	'author' => 'Klaus Heuer',
